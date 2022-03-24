@@ -5,11 +5,15 @@ Since this is quite different from the usual way that a MUD works, I'm starting 
 
 This mudlib is being developed against the FluffOS driver: https://github.com/fluffos/fluffos
 
+The code in this repository is written in LPC, to be compiled by the driver itself. An LPC primer can be found here:
+https://www.cs.hmc.edu/~jhsu/wilderness/basics.html
+
 Although it will have a text interface, as MUDs do, the idea is to create a remote client that issues commands on behalf of
 the player and parses the output into an organized display. I'm developing a client for Atari 8-bit computers here: 
 https://github.com/jj-cwc/gw_atari8
 
 Here is the README from the "Lil" mudlib:
+
 This directory contains a version of the Lil mudlib with additional code
 added to provide a testsuite for MudOS.  Currently the testsuite is small
 but hopefully it will grow with time (assuming the MudOS developers add
