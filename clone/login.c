@@ -16,7 +16,7 @@ logon()
 #ifdef __NO_ADD_ACTION__
     set_this_player(this_object());
 #endif
-    write("Welcome to Lil!\n\n");
+    write("Welcome to Galactic Warlords!\n\n");
     cat("/etc/motd");
     write("\n> ");
 #ifdef __PACKAGE_UIDS__
