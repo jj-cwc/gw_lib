@@ -1,12 +1,9 @@
-The only commands in this
-little mudlib are:
+IMPORTANT NOTE:
+This MUD is very much in the
+development stage. All data,
+including player data, is
+subject to deletion and/or
+modification at any time.
 
-    dest, update, ed, eval,
-    efun, rm, say, who, quit,
-    and shutdown.
-
-All of update, dest, ed, and rm
-require full pathnames as
-arguments.
-
+Nevertheless...
 Have fun.

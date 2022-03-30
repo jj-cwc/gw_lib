@@ -54,3 +54,6 @@ dkms.conf
 # Logs
 log/
 log/*
+
+# Passwords and user data
+/u
