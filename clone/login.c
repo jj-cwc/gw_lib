@@ -27,8 +27,14 @@ private int user_exists ( string name ) {
 private void create_user_object ( string name ) {
     object user;
 
+    user = find_player(name);
+    if(user) {
+        remove_interactive(user);
+        destruct(user);
+    }
     user = new("/clone/user");
-    user->set_name(name + "_" + getoid(user));
+    //user->set_name(name + "_" + getoid(user));
+    user->set_name(name);
     exec(user, this_object());
     user->setup();
 #ifndef __NO_ENVIRONMENT__
@@ -56,15 +62,22 @@ void logon() {
 }
 
 void get_username(string username) {
-    if(user_exists(username)) {
-        write("Welcome back!\nWhat is your password?\n");
-        input_to("get_password", 3, username);
+    if(username == "") {
+        write("Perhaps another time, then.");
+        remove_interactive(this_object());
+        destruct(this_object());
     } else {
-        write("Player not found.\n" +
-              "Enter a password to create new\n" +
-              "player, or [Return] to re-enter\n" +
-              "username.");
-        input_to("create_password", 3, username);
+        username = lower_case(username);
+        if(user_exists(username)) {
+            write("Welcome back!\nWhat is your password?\n");
+            input_to("get_password", 3, username);
+        } else {
+            write("Player not found.\n" +
+                  "Enter a password to create new\n" +
+                  "player, or [Return] to re-enter\n" +
+                  "username.");
+            input_to("create_password", 3, username);
+        }
     }
 }
 

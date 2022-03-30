@@ -21,3 +21,10 @@ main(string arg)
     }
     return 1;
 }
+
+string help() {
+    return @help
+Lists the players currently
+online.
+help;
+}
